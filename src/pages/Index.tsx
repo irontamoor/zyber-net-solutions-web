@@ -1,43 +1,22 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, Facebook, Twitter, Linkedin, Shield, Zap, Users, CheckCircle, Star, Quote } from "lucide-react";
+import { Phone, Mail, Facebook, Twitter, Linkedin, CheckCircle, Shield, Zap, Users } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import StatsSection from "@/components/StatsSection";
 import ServicesSection from "@/components/ServicesSection";
+import ConsultancySection from "@/components/ConsultancySection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 
 const Index = () => {
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      company: "TechStart Solutions",
-      role: "CEO",
-      text: "ZyberNetSolutions transformed our IT infrastructure completely. Their 24/7 support has been invaluable.",
-      rating: 5
-    },
-    {
-      name: "Michael Rodriguez",
-      company: "Global Manufacturing Corp",
-      role: "IT Director", 
-      text: "Professional, reliable, and always available when we need them most. Excellent cybersecurity expertise.",
-      rating: 5
-    },
-    {
-      name: "Emily Chen",
-      company: "Creative Design Agency",
-      role: "Operations Manager",
-      text: "Working from home became seamless after their network setup. Outstanding remote support.",
-      rating: 5
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-white text-gray-800">
       <Navigation />
       <HeroSection />
       <StatsSection />
       <ServicesSection />
+      <ConsultancySection />
 
       {/* About Section */}
       <section id="about" className="py-20 relative overflow-hidden">
@@ -68,7 +47,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="h-6 w-6 text-primary mr-3" />
-                  <span className="text-gray-700 font-medium">Scalable Infrastructure</span>
+                  <span className="text-gray-700 font-medium">Strategic IT Consultancy</span>
                 </div>
               </div>
             </div>
@@ -88,50 +67,14 @@ const Index = () => {
               <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-primary/20">
                 <Users className="h-8 w-8 text-primary mb-3" />
                 <h3 className="text-gray-800 font-semibold mb-2">Expert Team</h3>
-                <p className="text-gray-600 text-sm">Experienced professionals serving businesses and families</p>
+                <p className="text-gray-600 text-sm">Experienced professionals serving businesses and families with strategic insights</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=1080&fit=crop')" }}></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-gray-800">What Our Clients Say</h2>
-            <p className="text-xl text-gray-600">
-              Trusted by businesses and professionals nationwide
-            </p>
-          </div>
-          <div className="grid lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-white/95 backdrop-blur-sm border-primary/20 shadow-lg hover:shadow-xl transition-all duration-300">
-                <CardHeader>
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-current" />
-                    ))}
-                  </div>
-                  <Quote className="h-8 w-8 text-primary mb-4" />
-                  <CardDescription className="text-gray-700 text-base italic">
-                    "{testimonial.text}"
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="border-t border-primary/20 pt-4">
-                    <CardTitle className="text-gray-800 text-lg">{testimonial.name}</CardTitle>
-                    <p className="text-sm text-gray-600">{testimonial.role}</p>
-                    <p className="text-sm text-primary font-medium">{testimonial.company}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection />
 
       {/* Contact Section */}
       <section id="contact" className="py-20 relative overflow-hidden">
@@ -180,11 +123,16 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="col-span-2">
-              <div className="text-2xl font-bold mb-4">
-                ZyberNet<span className="text-primary">Solutions</span>
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold">Z</span>
+                </div>
+                <div className="text-2xl font-bold">
+                  ZyberNet<span className="text-primary">Solutions</span>
+                </div>
               </div>
               <p className="text-gray-300 mb-6 max-w-md">
-                Professional IT support and solutions for businesses, enterprises, and home users.
+                Professional IT support, consultancy, and solutions for businesses, enterprises, and home users.
               </p>
               <div className="flex space-x-4">
                 <a href="#" className="text-gray-400 hover:text-primary transition-colors">
@@ -205,7 +153,7 @@ const Index = () => {
                 <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">IT Support</a></li>
                 <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Cybersecurity</a></li>
                 <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Cloud Services</a></li>
-                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Home Setup</a></li>
+                <li><a href="#consultancy" className="text-gray-400 hover:text-white transition-colors">IT Consultancy</a></li>
               </ul>
             </div>
             

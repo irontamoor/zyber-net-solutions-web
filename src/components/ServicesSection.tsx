@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Monitor, Server, Lock, Headphones, Cloud, Home } from "lucide-react";
+import { Monitor, Server, Lock, Headphones, Cloud, Home, Smartphone, Database, Wifi, Shield, Settings, Users } from "lucide-react";
 
 const ServicesSection = () => {
   const services = [
@@ -33,6 +33,36 @@ const ServicesSection = () => {
       icon: <Home className="h-8 w-8" />,
       title: "Home Technology Setup",
       description: "Smart home installations, network setup, and personal tech support for families."
+    },
+    {
+      icon: <Smartphone className="h-8 w-8" />,
+      title: "Mobile Device Management",
+      description: "Enterprise mobile device security, deployment, and management solutions."
+    },
+    {
+      icon: <Database className="h-8 w-8" />,
+      title: "Data Management & Backup",
+      description: "Data recovery, backup strategies, and database optimization services."
+    },
+    {
+      icon: <Wifi className="h-8 w-8" />,
+      title: "Network Solutions",
+      description: "Wireless networks, VPN setup, and network performance optimization."
+    },
+    {
+      icon: <Shield className="h-8 w-8" />,
+      title: "Compliance & Auditing",
+      description: "GDPR, HIPAA, and industry compliance auditing and implementation."
+    },
+    {
+      icon: <Settings className="h-8 w-8" />,
+      title: "System Integration",
+      description: "Seamless integration of business systems and software solutions."
+    },
+    {
+      icon: <Users className="h-8 w-8" />,
+      title: "Training & Support",
+      description: "Staff training programs and ongoing technical education services."
     }
   ];
 
@@ -43,21 +73,21 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4 text-gray-800">Our Services</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Comprehensive IT solutions tailored for businesses, enterprises, and home users
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive IT solutions tailored for businesses, enterprises, and home users. From basic support to advanced enterprise solutions.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <Card key={index} className="bg-white/95 backdrop-blur-sm border-gray-200 hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
               <CardHeader>
                 <div className="text-primary mb-4">
                   {service.icon}
                 </div>
-                <CardTitle className="text-gray-800 text-xl">{service.title}</CardTitle>
+                <CardTitle className="text-gray-800 text-lg">{service.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-gray-600">
+                <CardDescription className="text-gray-600 text-sm">
                   {service.description}
                 </CardDescription>
               </CardContent>
