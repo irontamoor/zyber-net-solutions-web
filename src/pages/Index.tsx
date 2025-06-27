@@ -99,7 +99,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 text-gray-800">
+    <div className="min-h-screen bg-white text-gray-800">
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-sm border-b border-purple-200 shadow-lg' : 'bg-transparent'}`}>
         <div className="container mx-auto px-4">
@@ -153,7 +153,7 @@ const Index = () => {
               </Button>
               <Button 
                 size="lg" 
-                className="bg-white/20 hover:bg-white/30 text-white border-2 border-white/50 hover:border-white/70 text-lg px-8 py-4 backdrop-blur-sm shadow-xl transition-all duration-300"
+                className="bg-white/30 hover:bg-white/40 text-white border-2 border-white/70 hover:border-white/90 text-lg px-8 py-4 backdrop-blur-sm shadow-xl transition-all duration-300"
                 onClick={() => scrollToSection('services')}
               >
                 Explore Our Services
@@ -184,13 +184,15 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-100 to-yellow-100">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&h=1080&fit=crop')" }}></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/80 to-yellow-500/80"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, index) => (
               <div key={index} className="space-y-2">
-                <div className="text-4xl font-bold text-orange-600">{stat.number}</div>
-                <div className="text-gray-700 font-medium">{stat.label}</div>
+                <div className="text-4xl font-bold text-white drop-shadow-lg">{stat.number}</div>
+                <div className="text-white font-medium drop-shadow">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -198,17 +200,19 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gradient-to-br from-green-50 to-teal-50">
-        <div className="container mx-auto px-4">
+      <section id="services" className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&h=1080&fit=crop')" }}></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-green-400/90 to-teal-400/90"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-gray-800">Our Services</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold mb-4 text-white drop-shadow-lg">Our Services</h2>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto drop-shadow">
               Comprehensive IT solutions tailored for businesses, enterprises, and home users
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="bg-white border-green-200 hover:border-green-400 hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
+              <Card key={index} className="bg-white/95 backdrop-blur-sm border-white/50 hover:bg-white hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105">
                 <CardHeader>
                   <div className="text-green-600 mb-4">
                     {service.icon}
@@ -227,53 +231,55 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div className="container mx-auto px-4">
+      <section id="about" className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1920&h=1080&fit=crop')" }}></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/85 to-indigo-600/85"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-6 text-gray-800">About ZyberNetSolutions</h2>
-              <p className="text-gray-700 text-lg mb-6 leading-relaxed">
+              <h2 className="text-4xl font-bold mb-6 text-white drop-shadow-lg">About ZyberNetSolutions</h2>
+              <p className="text-white/90 text-lg mb-6 leading-relaxed drop-shadow">
                 With over 15 years of experience in the IT industry, ZyberNetSolutions has been the trusted technology partner for businesses, enterprises, and homeowners across the region.
               </p>
-              <p className="text-gray-700 text-lg mb-8 leading-relaxed">
+              <p className="text-white/90 text-lg mb-8 leading-relaxed drop-shadow">
                 Whether you're a Fortune 500 company, a growing startup, or a family looking to upgrade your home network, our team of certified professionals provides comprehensive IT solutions that drive growth, enhance security, and ensure operational excellence.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <CheckCircle className="h-6 w-6 text-green-500 mr-3" />
-                  <span className="text-gray-700 font-medium">Certified IT Professionals</span>
+                  <CheckCircle className="h-6 w-6 text-green-300 mr-3" />
+                  <span className="text-white font-medium drop-shadow">Certified IT Professionals</span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="h-6 w-6 text-green-500 mr-3" />
-                  <span className="text-gray-700 font-medium">24/7 Support & Monitoring</span>
+                  <CheckCircle className="h-6 w-6 text-green-300 mr-3" />
+                  <span className="text-white font-medium drop-shadow">24/7 Support & Monitoring</span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="h-6 w-6 text-green-500 mr-3" />
-                  <span className="text-gray-700 font-medium">Business & Home Solutions</span>
+                  <CheckCircle className="h-6 w-6 text-green-300 mr-3" />
+                  <span className="text-white font-medium drop-shadow">Business & Home Solutions</span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="h-6 w-6 text-green-500 mr-3" />
-                  <span className="text-gray-700 font-medium">Scalable Infrastructure</span>
+                  <CheckCircle className="h-6 w-6 text-green-300 mr-3" />
+                  <span className="text-white font-medium drop-shadow">Scalable Infrastructure</span>
                 </div>
               </div>
             </div>
             <div className="space-y-6">
               <div className="grid grid-cols-2 gap-6">
-                <div className="bg-gradient-to-br from-blue-400 to-purple-500 p-6 rounded-lg shadow-lg">
+                <div className="bg-white/20 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-white/30">
                   <Shield className="h-8 w-8 text-white mb-3" />
-                  <h3 className="text-white font-semibold mb-2">Security First</h3>
-                  <p className="text-blue-100 text-sm">Advanced cybersecurity measures protect your business and home</p>
+                  <h3 className="text-white font-semibold mb-2 drop-shadow">Security First</h3>
+                  <p className="text-white/80 text-sm drop-shadow">Advanced cybersecurity measures protect your business and home</p>
                 </div>
-                <div className="bg-gradient-to-br from-green-400 to-teal-500 p-6 rounded-lg shadow-lg">
+                <div className="bg-white/20 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-white/30">
                   <Zap className="h-8 w-8 text-white mb-3" />
-                  <h3 className="text-white font-semibold mb-2">Fast Response</h3>
-                  <p className="text-green-100 text-sm">Rapid issue resolution for all clients</p>
+                  <h3 className="text-white font-semibold mb-2 drop-shadow">Fast Response</h3>
+                  <p className="text-white/80 text-sm drop-shadow">Rapid issue resolution for all clients</p>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-purple-400 to-pink-500 p-6 rounded-lg shadow-lg">
+              <div className="bg-white/20 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-white/30">
                 <Users className="h-8 w-8 text-white mb-3" />
-                <h3 className="text-white font-semibold mb-2">Expert Team</h3>
-                <p className="text-purple-100 text-sm">Experienced professionals serving businesses and families</p>
+                <h3 className="text-white font-semibold mb-2 drop-shadow">Expert Team</h3>
+                <p className="text-white/80 text-sm drop-shadow">Experienced professionals serving businesses and families</p>
               </div>
             </div>
           </div>
@@ -281,17 +287,19 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-gradient-to-br from-pink-50 to-rose-100">
-        <div className="container mx-auto px-4">
+      <section id="testimonials" className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=1080&fit=crop')" }}></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-pink-500/80 to-rose-500/80"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-gray-800">What Our Clients Say</h2>
-            <p className="text-xl text-gray-600">
+            <h2 className="text-4xl font-bold mb-4 text-white drop-shadow-lg">What Our Clients Say</h2>
+            <p className="text-xl text-white/90 drop-shadow">
               Trusted by businesses and professionals nationwide
             </p>
           </div>
           <div className="grid lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-white border-pink-200 shadow-lg hover:shadow-xl transition-all duration-300">
+              <Card key={index} className="bg-white/95 backdrop-blur-sm border-white/50 shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardHeader>
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -317,16 +325,18 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-br from-indigo-100 to-purple-100">
-        <div className="container mx-auto px-4">
+      <section id="contact" className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&h=1080&fit=crop')" }}></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/85 to-purple-600/85"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-gray-800">Get In Touch</h2>
-            <p className="text-xl text-gray-600">
+            <h2 className="text-4xl font-bold mb-4 text-white drop-shadow-lg">Get In Touch</h2>
+            <p className="text-xl text-white/90 drop-shadow">
               Ready to transform your business or home IT infrastructure? Contact us today.
             </p>
           </div>
           <div className="grid lg:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            <Card className="bg-white border-indigo-200 text-center shadow-lg hover:shadow-xl transition-all duration-300">
+            <Card className="bg-white/95 backdrop-blur-sm border-white/50 text-center shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader>
                 <Phone className="h-12 w-12 text-indigo-600 mx-auto mb-4" />
                 <CardTitle className="text-gray-800">Call Us</CardTitle>
@@ -339,7 +349,7 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-white border-indigo-200 text-center shadow-lg hover:shadow-xl transition-all duration-300">
+            <Card className="bg-white/95 backdrop-blur-sm border-white/50 text-center shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader>
                 <Mail className="h-12 w-12 text-indigo-600 mx-auto mb-4" />
                 <CardTitle className="text-gray-800">Email Us</CardTitle>
@@ -356,8 +366,9 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-12">
-        <div className="container mx-auto px-4">
+      <footer className="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-12 relative overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&h=1080&fit=crop')" }}></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="col-span-2">
               <div className="text-2xl font-bold mb-4">
