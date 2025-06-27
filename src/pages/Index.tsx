@@ -1,10 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Shield, Zap, Users, CheckCircle, Star, Quote, ArrowRight, Monitor, Server, Lock, Headphones, Cloud, Smartphone, Home } from "lucide-react";
+import { Phone, Mail, Facebook, Twitter, Linkedin, Shield, Zap, Users, CheckCircle, Star, Quote, ArrowRight, Monitor, Server, Lock, Headphones, Cloud, Smartphone, Home } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const backgroundImages = [
+    "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&h=1080&fit=crop",
+    "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1920&h=1080&fit=crop",
+    "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=1920&h=1080&fit=crop",
+    "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=1920&h=1080&fit=crop"
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +21,13 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % backgroundImages.length);
+    }, 5000);
+    return () => clearInterval(slideInterval);
+  }, [backgroundImages.length]);
 
   const services = [
     {
@@ -106,26 +121,39 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section with Background Slides */}
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20"></div>
+        {/* Background Image Slider */}
+        <div className="absolute inset-0">
+          {backgroundImages.map((image, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+                index === currentSlide ? 'opacity-30' : 'opacity-0'
+              }`}
+              style={{ backgroundImage: `url(${image})` }}
+            />
+          ))}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 to-purple-900/60"></div>
+        </div>
+        
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Professional IT Solutions
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-100 mb-8 leading-relaxed drop-shadow-lg">
               Empowering businesses, enterprises, and homes with reliable technology support, cybersecurity, and infrastructure solutions
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-4 shadow-lg">
                 <Phone className="mr-2 h-5 w-5" />
                 <a href="tel:+1234567890">Get Started Today</a>
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-gray-600 text-white hover:bg-gray-800 text-lg px-8 py-4"
+                className="border-2 border-white/70 text-white hover:bg-white/10 hover:border-white text-lg px-8 py-4 backdrop-blur-sm shadow-lg"
                 onClick={() => scrollToSection('services')}
               >
                 Explore Our Services
@@ -134,9 +162,23 @@ const Index = () => {
             </div>
           </div>
         </div>
+        
+        {/* Slide Indicators */}
+        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+          {backgroundImages.map((_, index) => (
+            <button
+              key={index}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentSlide ? 'bg-blue-400' : 'bg-white/40'
+              }`}
+              onClick={() => setCurrentSlide(index)}
+            />
+          ))}
+        </div>
+        
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-gray-400 rounded-full mt-2"></div>
+          <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-gray-300 rounded-full mt-2"></div>
           </div>
         </div>
       </section>
@@ -283,7 +325,7 @@ const Index = () => {
               Ready to transform your business or home IT infrastructure? Contact us today.
             </p>
           </div>
-          <div className="grid lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <Card className="bg-gray-900 border-gray-700 text-center">
               <CardHeader>
                 <Phone className="h-12 w-12 text-blue-400 mx-auto mb-4" />
@@ -307,18 +349,6 @@ const Index = () => {
                   info@zybernetsolutions.com
                 </a>
                 <p className="text-gray-400 mt-2">Quick response guaranteed</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-gray-900 border-gray-700 text-center">
-              <CardHeader>
-                <MapPin className="h-12 w-12 text-blue-400 mx-auto mb-4" />
-                <CardTitle className="text-white">Visit Us</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-300">123 Tech Street</p>
-                <p className="text-gray-300">Business District</p>
-                <p className="text-gray-300">City, State 12345</p>
               </CardContent>
             </Card>
           </div>
