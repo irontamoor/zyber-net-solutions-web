@@ -42,6 +42,15 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
+          {/* Logo Section */}
+          <div className="flex justify-center mb-8">
+            <img 
+              src="/lovable-uploads/182f32a6-e5d3-4607-92fe-e9ada55a0cc8.png" 
+              alt="ZyberNetSolutions Logo" 
+              className="h-16 md:h-20 object-contain drop-shadow-2xl"
+            />
+          </div>
+          
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-gray-100 bg-clip-text text-transparent drop-shadow-lg">
             Professional IT Solutions
           </h1>
