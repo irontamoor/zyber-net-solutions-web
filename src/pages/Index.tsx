@@ -1,194 +1,380 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, Mail, Shield, Server, Users, Zap, CheckCircle, Star } from "lucide-react";
-import { Link } from "react-router-dom";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Shield, Zap, Users, CheckCircle, Star, Quote, ArrowRight, Monitor, Server, Lock, Headphones, Cloud, Smartphone } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Index = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const services = [
     {
-      icon: <Server className="h-12 w-12 text-blue-600" />,
-      title: "IT Infrastructure",
-      description: "Complete setup and management of your business IT infrastructure"
+      icon: <Monitor className="h-8 w-8" />,
+      title: "IT Support & Maintenance",
+      description: "24/7 technical support and proactive system maintenance for businesses of all sizes."
     },
     {
-      icon: <Shield className="h-12 w-12 text-blue-600" />,
-      title: "Cybersecurity",
-      description: "Protect your business from cyber threats with advanced security solutions"
+      icon: <Server className="h-8 w-8" />,
+      title: "Infrastructure Setup",
+      description: "Complete network infrastructure design, implementation, and optimization."
     },
     {
-      icon: <Users className="h-12 w-12 text-blue-600" />,
-      title: "24/7 Support",
-      description: "Round-the-clock technical support when you need it most"
+      icon: <Lock className="h-8 w-8" />,
+      title: "Cybersecurity Solutions",
+      description: "Comprehensive security audits, threat protection, and compliance management."
     },
     {
-      icon: <Zap className="h-12 w-12 text-blue-600" />,
-      title: "Quick Response",
-      description: "Fast troubleshooting and resolution to minimize downtime"
+      icon: <Cloud className="h-8 w-8" />,
+      title: "Cloud Services",
+      description: "Cloud migration, backup solutions, and hybrid infrastructure management."
+    },
+    {
+      icon: <Headphones className="h-8 w-8" />,
+      title: "Help Desk Support",
+      description: "Remote and on-site technical support with rapid response times."
+    },
+    {
+      icon: <Smartphone className="h-8 w-8" />,
+      title: "Mobile Device Management",
+      description: "Enterprise mobility solutions and device security management."
     }
   ];
 
-  const benefits = [
-    "Certified IT professionals",
-    "Proven track record",
-    "24/7 emergency support",
-    "Scalable solutions",
-    "Competitive pricing",
-    "Free initial consultation"
+  const testimonials = [
+    {
+      name: "Sarah Johnson",
+      company: "TechStart Solutions",
+      role: "CEO",
+      text: "ZyberNetSolutions transformed our IT infrastructure completely. Their 24/7 support has been invaluable.",
+      rating: 5
+    },
+    {
+      name: "Michael Rodriguez",
+      company: "Global Manufacturing Corp",
+      role: "IT Director", 
+      text: "Professional, reliable, and always available when we need them most. Excellent cybersecurity expertise.",
+      rating: 5
+    },
+    {
+      name: "Emily Chen",
+      company: "Creative Design Agency",
+      role: "Operations Manager",
+      text: "Working from home became seamless after their network setup. Outstanding remote support.",
+      rating: 5
+    }
   ];
 
+  const stats = [
+    { number: "500+", label: "Satisfied Clients" },
+    { number: "99.9%", label: "Uptime Guarantee" },
+    { number: "15+", label: "Years Experience" },
+    { number: "24/7", label: "Support Available" }
+  ];
+
+  const scrollToSection = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
+    <div className="min-h-screen bg-gray-900 text-white">
+      {/* Navigation */}
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-gray-900/95 backdrop-blur-sm border-b border-gray-800' : 'bg-transparent'}`}>
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
-              ZyberNet<span className="text-blue-300">Solutions</span>
+          <div className="flex items-center justify-between h-16">
+            <div className="text-2xl font-bold">
+              ZyberNet<span className="text-blue-400">Solutions</span>
+            </div>
+            <div className="hidden md:flex space-x-8">
+              <button onClick={() => scrollToSection('home')} className="hover:text-blue-400 transition-colors">Home</button>
+              <button onClick={() => scrollToSection('services')} className="hover:text-blue-400 transition-colors">Services</button>
+              <button onClick={() => scrollToSection('about')} className="hover:text-blue-400 transition-colors">About</button>
+              <button onClick={() => scrollToSection('testimonials')} className="hover:text-blue-400 transition-colors">Testimonials</button>
+              <button onClick={() => scrollToSection('contact')} className="hover:text-blue-400 transition-colors">Contact</button>
+            </div>
+            <Button className="bg-blue-600 hover:bg-blue-700">
+              <Phone className="mr-2 h-4 w-4" />
+              <a href="tel:+1234567890">Call Now</a>
+            </Button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              Professional IT Solutions
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100 animate-fade-in">
-              Professional IT Support & Solutions for Businesses, Enterprises & Home Users
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+              Empowering businesses with reliable technology support, cybersecurity, and infrastructure solutions
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Button size="lg" className="bg-white text-blue-900 hover:bg-blue-50 text-lg px-8 py-3">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-4">
                 <Phone className="mr-2 h-5 w-5" />
-                <a href="tel:+1234567890">Call (123) 456-7890</a>
+                Get Started Today
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-900 text-lg px-8 py-3">
-                <Mail className="mr-2 h-5 w-5" />
-                <a href="mailto:info@zybernetsolutions.com">Email Us</a>
+              <Button size="lg" variant="outline" className="border-gray-600 text-white hover:bg-gray-800 text-lg px-8 py-4">
+                Learn More
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              <div className="animate-fade-in">
-                <div className="text-3xl font-bold text-blue-300">500+</div>
-                <div className="text-blue-200">Happy Clients</div>
-              </div>
-              <div className="animate-fade-in">
-                <div className="text-3xl font-bold text-blue-300">24/7</div>
-                <div className="text-blue-200">Support Available</div>
-              </div>
-              <div className="animate-fade-in">
-                <div className="text-3xl font-bold text-blue-300">15+</div>
-                <div className="text-blue-200">Years Experience</div>
-              </div>
-            </div>
+          </div>
+        </div>
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-gray-400 rounded-full mt-2"></div>
           </div>
         </div>
       </section>
 
-      {/* Services Overview */}
-      <section className="py-20 bg-gray-50">
+      {/* Stats Section */}
+      <section className="py-20 bg-gray-800">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            {stats.map((stat, index) => (
+              <div key={index} className="space-y-2">
+                <div className="text-4xl font-bold text-blue-400">{stat.number}</div>
+                <div className="text-gray-300">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-20 bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Core Services</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive IT solutions tailored to meet your specific needs, from small businesses to large enterprises
+            <h2 className="text-4xl font-bold mb-4">Our Services</h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Comprehensive IT solutions tailored to your business needs
             </p>
           </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
-                <CardHeader className="pb-4">
-                  <div className="flex justify-center mb-4">
+              <Card key={index} className="bg-gray-800 border-gray-700 hover:border-blue-500 transition-all duration-300 hover:transform hover:scale-105">
+                <CardHeader>
+                  <div className="text-blue-400 mb-4">
                     {service.icon}
                   </div>
-                  <CardTitle className="text-xl text-gray-900">{service.title}</CardTitle>
+                  <CardTitle className="text-white text-xl">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-gray-600">
+                  <CardDescription className="text-gray-300">
                     {service.description}
                   </CardDescription>
                 </CardContent>
               </Card>
             ))}
           </div>
-          
-          <div className="text-center mt-12">
-            <Link to="/services">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3">
-                View All Services
-              </Button>
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20">
+      {/* About Section */}
+      <section id="about" className="py-20 bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Why Choose ZyberNetSolutions?</h2>
-              <p className="text-lg text-gray-600 mb-8">
-                With over 15 years of experience in the IT industry, we've built a reputation for delivering 
-                reliable, efficient, and cost-effective solutions that help businesses thrive in the digital age.
+              <h2 className="text-4xl font-bold mb-6">About ZyberNetSolutions</h2>
+              <p className="text-gray-300 text-lg mb-6 leading-relaxed">
+                With over 15 years of experience in the IT industry, ZyberNetSolutions has been the trusted technology partner for businesses, enterprises, and home users across the region.
               </p>
-              
-              <div className="grid sm:grid-cols-2 gap-4">
-                {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">{benefit}</span>
-                  </div>
-                ))}
-              </div>
-              
-              <div className="mt-8">
-                <Link to="/about">
-                  <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
-                    Learn More About Us
-                  </Button>
-                </Link>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop" 
-                alt="IT Professional at work"
-                className="rounded-lg shadow-xl"
-              />
-              <div className="absolute -bottom-6 -right-6 bg-blue-600 text-white p-6 rounded-lg shadow-lg">
+              <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+                Our team of certified professionals specializes in providing comprehensive IT solutions that drive business growth, enhance security, and ensure operational excellence.
+              </p>
+              <div className="space-y-4">
                 <div className="flex items-center">
-                  <Star className="h-8 w-8 text-yellow-400 mr-2" />
-                  <div>
-                    <div className="text-2xl font-bold">4.9/5</div>
-                    <div className="text-sm">Client Rating</div>
-                  </div>
+                  <CheckCircle className="h-6 w-6 text-green-400 mr-3" />
+                  <span className="text-gray-300">Certified IT Professionals</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="h-6 w-6 text-green-400 mr-3" />
+                  <span className="text-gray-300">24/7 Support & Monitoring</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="h-6 w-6 text-green-400 mr-3" />
+                  <span className="text-gray-300">Proactive Security Solutions</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="h-6 w-6 text-green-400 mr-3" />
+                  <span className="text-gray-300">Scalable Infrastructure</span>
                 </div>
               </div>
             </div>
+            <div className="space-y-6">
+              <div className="grid grid-cols-2 gap-6">
+                <div className="bg-gradient-to-br from-blue-600 to-purple-600 p-6 rounded-lg">
+                  <Shield className="h-8 w-8 text-white mb-3" />
+                  <h3 className="text-white font-semibold mb-2">Security First</h3>
+                  <p className="text-blue-100 text-sm">Advanced cybersecurity measures protect your business</p>
+                </div>
+                <div className="bg-gradient-to-br from-green-600 to-blue-600 p-6 rounded-lg">
+                  <Zap className="h-8 w-8 text-white mb-3" />
+                  <h3 className="text-white font-semibold mb-2">Fast Response</h3>
+                  <p className="text-green-100 text-sm">Rapid issue resolution and proactive support</p>
+                </div>
+              </div>
+              <div className="bg-gradient-to-br from-purple-600 to-pink-600 p-6 rounded-lg">
+                <Users className="h-8 w-8 text-white mb-3" />
+                <h3 className="text-white font-semibold mb-2">Expert Team</h3>
+                <p className="text-purple-100 text-sm">Experienced professionals dedicated to your success</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-blue-900 text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-xl mb-8 text-blue-200">
-            Contact us today for a free consultation and discover how we can help your business succeed.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-blue-900 hover:bg-blue-50 text-lg px-8 py-3">
-              <Phone className="mr-2 h-5 w-5" />
-              <a href="tel:+1234567890">Call Now: (123) 456-7890</a>
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-900 text-lg px-8 py-3">
-              <Mail className="mr-2 h-5 w-5" />
-              <a href="mailto:info@zybernetsolutions.com">Email: info@zybernetsolutions.com</a>
-            </Button>
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-20 bg-gray-900">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>
+            <p className="text-xl text-gray-400">
+              Trusted by businesses and professionals nationwide
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="bg-gray-800 border-gray-700">
+                <CardHeader>
+                  <div className="flex mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <Quote className="h-8 w-8 text-blue-400 mb-4" />
+                  <CardDescription className="text-gray-300 text-base italic">
+                    "{testimonial.text}"
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="border-t border-gray-700 pt-4">
+                    <CardTitle className="text-white text-lg">{testimonial.name}</CardTitle>
+                    <p className="text-sm text-gray-400">{testimonial.role}</p>
+                    <p className="text-sm text-blue-400 font-medium">{testimonial.company}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      <Footer />
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-gray-800">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
+            <p className="text-xl text-gray-400">
+              Ready to transform your IT infrastructure? Contact us today.
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <Card className="bg-gray-900 border-gray-700 text-center">
+              <CardHeader>
+                <Phone className="h-12 w-12 text-blue-400 mx-auto mb-4" />
+                <CardTitle className="text-white">Call Us</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <a href="tel:+1234567890" className="text-blue-400 hover:text-blue-300 text-lg">
+                  (123) 456-7890
+                </a>
+                <p className="text-gray-400 mt-2">Available 24/7</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-gray-900 border-gray-700 text-center">
+              <CardHeader>
+                <Mail className="h-12 w-12 text-blue-400 mx-auto mb-4" />
+                <CardTitle className="text-white">Email Us</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <a href="mailto:info@zybernetsolutions.com" className="text-blue-400 hover:text-blue-300 text-lg">
+                  info@zybernetsolutions.com
+                </a>
+                <p className="text-gray-400 mt-2">Quick response guaranteed</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-gray-900 border-gray-700 text-center">
+              <CardHeader>
+                <MapPin className="h-12 w-12 text-blue-400 mx-auto mb-4" />
+                <CardTitle className="text-white">Visit Us</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-300">123 Tech Street</p>
+                <p className="text-gray-300">Business District</p>
+                <p className="text-gray-300">City, State 12345</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 border-t border-gray-800 py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="col-span-2">
+              <div className="text-2xl font-bold mb-4">
+                ZyberNet<span className="text-blue-400">Solutions</span>
+              </div>
+              <p className="text-gray-400 mb-6 max-w-md">
+                Professional IT support and solutions for businesses, enterprises, and home users.
+              </p>
+              <div className="flex space-x-4">
+                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+                  <Facebook className="h-5 w-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+                  <Twitter className="h-5 w-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+                  <Linkedin className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold mb-4 text-white">Services</h3>
+              <ul className="space-y-2">
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">IT Support</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Cybersecurity</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Cloud Services</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Help Desk</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold mb-4 text-white">Contact</h3>
+              <div className="space-y-3">
+                <a href="tel:+1234567890" className="flex items-center text-gray-400 hover:text-white transition-colors">
+                  <Phone className="h-4 w-4 mr-3" />
+                  (123) 456-7890
+                </a>
+                <a href="mailto:info@zybernetsolutions.com" className="flex items-center text-gray-400 hover:text-white transition-colors">
+                  <Mail className="h-4 w-4 mr-3" />
+                  info@zybernetsolutions.com
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 ZyberNetSolutions. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
