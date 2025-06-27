@@ -29,11 +29,12 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-3">
-            <img 
-              src="/lovable-uploads/182f32a6-e5d3-4607-92fe-e9ada55a0cc8.png" 
-              alt="ZyberNetSolutions Logo" 
-              className="h-8 object-contain"
-            />
+            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">Z</span>
+            </div>
+            <div className="text-xl font-bold text-gray-800">
+              ZyberNet<span className="text-primary">Solutions</span>
+            </div>
           </div>
           
           {/* Desktop Navigation */}

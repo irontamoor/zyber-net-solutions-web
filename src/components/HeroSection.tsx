@@ -42,13 +42,16 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
-          {/* Logo Section */}
+          {/* Custom Logo Design */}
           <div className="flex justify-center mb-8">
-            <img 
-              src="/lovable-uploads/182f32a6-e5d3-4607-92fe-e9ada55a0cc8.png" 
-              alt="ZyberNetSolutions Logo" 
-              className="h-16 md:h-20 object-contain drop-shadow-2xl"
-            />
+            <div className="flex items-center space-x-3">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-lg flex items-center justify-center shadow-2xl">
+                <span className="text-primary font-bold text-xl md:text-3xl">Z</span>
+              </div>
+              <div className="text-3xl md:text-4xl font-bold text-white drop-shadow-2xl">
+                ZyberNet<span className="text-white/90">Solutions</span>
+              </div>
+            </div>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-gray-100 bg-clip-text text-transparent drop-shadow-lg">
