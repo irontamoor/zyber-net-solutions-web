@@ -1,7 +1,6 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Shield, Zap, Users, CheckCircle, Star, Quote, ArrowRight, Monitor, Server, Lock, Headphones, Cloud, Smartphone } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Shield, Zap, Users, CheckCircle, Star, Quote, ArrowRight, Monitor, Server, Lock, Headphones, Cloud, Smartphone, Home } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const Index = () => {
@@ -42,9 +41,9 @@ const Index = () => {
       description: "Remote and on-site technical support with rapid response times."
     },
     {
-      icon: <Smartphone className="h-8 w-8" />,
-      title: "Mobile Device Management",
-      description: "Enterprise mobility solutions and device security management."
+      icon: <Home className="h-8 w-8" />,
+      title: "Home Technology Setup",
+      description: "Smart home installations, network setup, and personal tech support for families."
     }
   ];
 
@@ -116,15 +115,20 @@ const Index = () => {
               Professional IT Solutions
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-              Empowering businesses with reliable technology support, cybersecurity, and infrastructure solutions
+              Empowering businesses, enterprises, and homes with reliable technology support, cybersecurity, and infrastructure solutions
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-4">
                 <Phone className="mr-2 h-5 w-5" />
-                Get Started Today
+                <a href="tel:+1234567890">Get Started Today</a>
               </Button>
-              <Button size="lg" variant="outline" className="border-gray-600 text-white hover:bg-gray-800 text-lg px-8 py-4">
-                Learn More
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-gray-600 text-white hover:bg-gray-800 text-lg px-8 py-4"
+                onClick={() => scrollToSection('services')}
+              >
+                Explore Our Services
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
@@ -157,7 +161,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Our Services</h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Comprehensive IT solutions tailored to your business needs
+              Comprehensive IT solutions tailored for businesses, enterprises, and home users
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -187,10 +191,10 @@ const Index = () => {
             <div>
               <h2 className="text-4xl font-bold mb-6">About ZyberNetSolutions</h2>
               <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-                With over 15 years of experience in the IT industry, ZyberNetSolutions has been the trusted technology partner for businesses, enterprises, and home users across the region.
+                With over 15 years of experience in the IT industry, ZyberNetSolutions has been the trusted technology partner for businesses, enterprises, and homeowners across the region.
               </p>
               <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-                Our team of certified professionals specializes in providing comprehensive IT solutions that drive business growth, enhance security, and ensure operational excellence.
+                Whether you're a Fortune 500 company, a growing startup, or a family looking to upgrade your home network, our team of certified professionals provides comprehensive IT solutions that drive growth, enhance security, and ensure operational excellence.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
@@ -203,7 +207,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="h-6 w-6 text-green-400 mr-3" />
-                  <span className="text-gray-300">Proactive Security Solutions</span>
+                  <span className="text-gray-300">Business & Home Solutions</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="h-6 w-6 text-green-400 mr-3" />
@@ -216,18 +220,18 @@ const Index = () => {
                 <div className="bg-gradient-to-br from-blue-600 to-purple-600 p-6 rounded-lg">
                   <Shield className="h-8 w-8 text-white mb-3" />
                   <h3 className="text-white font-semibold mb-2">Security First</h3>
-                  <p className="text-blue-100 text-sm">Advanced cybersecurity measures protect your business</p>
+                  <p className="text-blue-100 text-sm">Advanced cybersecurity measures protect your business and home</p>
                 </div>
                 <div className="bg-gradient-to-br from-green-600 to-blue-600 p-6 rounded-lg">
                   <Zap className="h-8 w-8 text-white mb-3" />
                   <h3 className="text-white font-semibold mb-2">Fast Response</h3>
-                  <p className="text-green-100 text-sm">Rapid issue resolution and proactive support</p>
+                  <p className="text-green-100 text-sm">Rapid issue resolution for all clients</p>
                 </div>
               </div>
               <div className="bg-gradient-to-br from-purple-600 to-pink-600 p-6 rounded-lg">
                 <Users className="h-8 w-8 text-white mb-3" />
                 <h3 className="text-white font-semibold mb-2">Expert Team</h3>
-                <p className="text-purple-100 text-sm">Experienced professionals dedicated to your success</p>
+                <p className="text-purple-100 text-sm">Experienced professionals serving businesses and families</p>
               </div>
             </div>
           </div>
@@ -276,7 +280,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
             <p className="text-xl text-gray-400">
-              Ready to transform your IT infrastructure? Contact us today.
+              Ready to transform your business or home IT infrastructure? Contact us today.
             </p>
           </div>
           <div className="grid lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -351,7 +355,7 @@ const Index = () => {
                 <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">IT Support</a></li>
                 <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Cybersecurity</a></li>
                 <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Cloud Services</a></li>
-                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Help Desk</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Home Setup</a></li>
               </ul>
             </div>
             
