@@ -101,20 +101,20 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white text-gray-800">
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-sm border-b border-purple-200 shadow-lg' : 'bg-transparent'}`}>
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-sm border-b border-blue-200 shadow-lg' : 'bg-transparent'}`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="text-2xl font-bold">
-              ZyberNet<span className="text-purple-600">Solutions</span>
+              ZyberNet<span className="text-blue-600">Solutions</span>
             </div>
             <div className="hidden md:flex space-x-8">
-              <button onClick={() => scrollToSection('home')} className="hover:text-purple-600 transition-colors font-medium">Home</button>
-              <button onClick={() => scrollToSection('services')} className="hover:text-purple-600 transition-colors font-medium">Services</button>
-              <button onClick={() => scrollToSection('about')} className="hover:text-purple-600 transition-colors font-medium">About</button>
-              <button onClick={() => scrollToSection('testimonials')} className="hover:text-purple-600 transition-colors font-medium">Testimonials</button>
-              <button onClick={() => scrollToSection('contact')} className="hover:text-purple-600 transition-colors font-medium">Contact</button>
+              <button onClick={() => scrollToSection('home')} className="hover:text-blue-600 transition-colors font-medium">Home</button>
+              <button onClick={() => scrollToSection('services')} className="hover:text-blue-600 transition-colors font-medium">Services</button>
+              <button onClick={() => scrollToSection('about')} className="hover:text-blue-600 transition-colors font-medium">About</button>
+              <button onClick={() => scrollToSection('testimonials')} className="hover:text-blue-600 transition-colors font-medium">Testimonials</button>
+              <button onClick={() => scrollToSection('contact')} className="hover:text-blue-600 transition-colors font-medium">Contact</button>
             </div>
-            <Button className="bg-purple-600 hover:bg-purple-700 text-white shadow-lg">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg">
               <Phone className="mr-2 h-4 w-4" />
               <a href="tel:+1234567890">Call Now</a>
             </Button>
@@ -135,19 +135,19 @@ const Index = () => {
               style={{ backgroundImage: `url(${image})` }}
             />
           ))}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-600/60 to-pink-600/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/70 to-blue-800/70"></div>
         </div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-purple-100 bg-clip-text text-transparent drop-shadow-lg">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent drop-shadow-lg">
               Professional IT Solutions
             </h1>
             <p className="text-xl md:text-2xl text-white mb-8 leading-relaxed drop-shadow-lg">
               Empowering businesses, enterprises, and homes with reliable technology support, cybersecurity, and infrastructure solutions
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white text-lg px-8 py-4 shadow-xl border-2 border-white/20">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4 shadow-xl border-2 border-white/20">
                 <Phone className="mr-2 h-5 w-5" />
                 <a href="tel:+1234567890">Get Started Today</a>
               </Button>
@@ -186,7 +186,7 @@ const Index = () => {
       {/* Stats Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&h=1080&fit=crop')" }}></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/80 to-yellow-500/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/85 to-blue-800/85"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, index) => (
@@ -202,7 +202,7 @@ const Index = () => {
       {/* Services Section */}
       <section id="services" className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&h=1080&fit=crop')" }}></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-green-400/90 to-teal-400/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/80 to-blue-700/80"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-white drop-shadow-lg">Our Services</h2>
@@ -214,7 +214,7 @@ const Index = () => {
             {services.map((service, index) => (
               <Card key={index} className="bg-white/95 backdrop-blur-sm border-white/50 hover:bg-white hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105">
                 <CardHeader>
-                  <div className="text-green-600 mb-4">
+                  <div className="text-blue-600 mb-4">
                     {service.icon}
                   </div>
                   <CardTitle className="text-gray-800 text-xl">{service.title}</CardTitle>
@@ -233,7 +233,7 @@ const Index = () => {
       {/* About Section */}
       <section id="about" className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1920&h=1080&fit=crop')" }}></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/85 to-indigo-600/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-700/85 to-blue-900/85"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -246,19 +246,19 @@ const Index = () => {
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <CheckCircle className="h-6 w-6 text-green-300 mr-3" />
+                  <CheckCircle className="h-6 w-6 text-blue-300 mr-3" />
                   <span className="text-white font-medium drop-shadow">Certified IT Professionals</span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="h-6 w-6 text-green-300 mr-3" />
+                  <CheckCircle className="h-6 w-6 text-blue-300 mr-3" />
                   <span className="text-white font-medium drop-shadow">24/7 Support & Monitoring</span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="h-6 w-6 text-green-300 mr-3" />
+                  <CheckCircle className="h-6 w-6 text-blue-300 mr-3" />
                   <span className="text-white font-medium drop-shadow">Business & Home Solutions</span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="h-6 w-6 text-green-300 mr-3" />
+                  <CheckCircle className="h-6 w-6 text-blue-300 mr-3" />
                   <span className="text-white font-medium drop-shadow">Scalable Infrastructure</span>
                 </div>
               </div>
@@ -268,7 +268,7 @@ const Index = () => {
                 <div className="bg-white/20 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-white/30">
                   <Shield className="h-8 w-8 text-white mb-3" />
                   <h3 className="text-white font-semibold mb-2 drop-shadow">Security First</h3>
-                  <p className="text-white/80 text-sm drop-shadow">Advanced cybersecurity measures protect your business and home</p>
+                  <p className="text-白 text-sm drop-shadow">Advanced cybersecurity measures protect your business and home</p>
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-white/30">
                   <Zap className="h-8 w-8 text-white mb-3" />
@@ -289,7 +289,7 @@ const Index = () => {
       {/* Testimonials Section */}
       <section id="testimonials" className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=1080&fit=crop')" }}></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-pink-500/80 to-rose-500/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-800/80 to-blue-600/80"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-white drop-shadow-lg">What Our Clients Say</h2>
@@ -303,19 +303,19 @@ const Index = () => {
                 <CardHeader>
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                      <Star key={i} className="h-5 w-5 text-blue-400 fill-current" />
                     ))}
                   </div>
-                  <Quote className="h-8 w-8 text-pink-500 mb-4" />
+                  <Quote className="h-8 w-8 text-blue-500 mb-4" />
                   <CardDescription className="text-gray-700 text-base italic">
                     "{testimonial.text}"
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="border-t border-pink-200 pt-4">
+                  <div className="border-t border-blue-200 pt-4">
                     <CardTitle className="text-gray-800 text-lg">{testimonial.name}</CardTitle>
                     <p className="text-sm text-gray-600">{testimonial.role}</p>
-                    <p className="text-sm text-pink-600 font-medium">{testimonial.company}</p>
+                    <p className="text-sm text-blue-600 font-medium">{testimonial.company}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -327,7 +327,7 @@ const Index = () => {
       {/* Contact Section */}
       <section id="contact" className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&h=1080&fit=crop')" }}></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/85 to-purple-600/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/85 to-blue-800/85"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-white drop-shadow-lg">Get In Touch</h2>
@@ -338,11 +338,11 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <Card className="bg-white/95 backdrop-blur-sm border-white/50 text-center shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader>
-                <Phone className="h-12 w-12 text-indigo-600 mx-auto mb-4" />
+                <Phone className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                 <CardTitle className="text-gray-800">Call Us</CardTitle>
               </CardHeader>
               <CardContent>
-                <a href="tel:+1234567890" className="text-indigo-600 hover:text-indigo-700 text-lg font-semibold">
+                <a href="tel:+1234567890" className="text-blue-600 hover:text-blue-700 text-lg font-semibold">
                   (123) 456-7890
                 </a>
                 <p className="text-gray-600 mt-2">Available 24/7</p>
@@ -351,11 +351,11 @@ const Index = () => {
             
             <Card className="bg-white/95 backdrop-blur-sm border-white/50 text-center shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader>
-                <Mail className="h-12 w-12 text-indigo-600 mx-auto mb-4" />
+                <Mail className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                 <CardTitle className="text-gray-800">Email Us</CardTitle>
               </CardHeader>
               <CardContent>
-                <a href="mailto:info@zybernetsolutions.com" className="text-indigo-600 hover:text-indigo-700 text-lg font-semibold">
+                <a href="mailto:info@zybernetsolutions.com" className="text-blue-600 hover:text-blue-700 text-lg font-semibold">
                   info@zybernetsolutions.com
                 </a>
                 <p className="text-gray-600 mt-2">Quick response guaranteed</p>
@@ -372,19 +372,19 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="col-span-2">
               <div className="text-2xl font-bold mb-4">
-                ZyberNet<span className="text-purple-400">Solutions</span>
+                ZyberNet<span className="text-blue-400">Solutions</span>
               </div>
               <p className="text-gray-300 mb-6 max-w-md">
                 Professional IT support and solutions for businesses, enterprises, and home users.
               </p>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
                   <Facebook className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
                   <Twitter className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
                   <Linkedin className="h-5 w-5" />
                 </a>
               </div>
