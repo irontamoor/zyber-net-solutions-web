@@ -93,8 +93,8 @@ const Index = () => {
                 <CardTitle className="text-gray-800">Call Us</CardTitle>
               </CardHeader>
               <CardContent>
-                <a href="tel:+4407447437760" className="text-primary hover:text-primary/80 text-lg font-semibold">
-                  +44 07447437760
+                <a href="tel:+44020712345675" className="text-primary hover:text-primary/80 text-lg font-semibold">
+                  (+44) 0 20 7123 4567
                 </a>
                 <p className="text-gray-600 mt-2">Available 24/7</p>
               </CardContent>
@@ -159,9 +159,9 @@ const Index = () => {
             <div>
               <h3 className="text-lg font-semibold mb-4 text-white">Contact</h3>
               <div className="space-y-3">
-                <a href="tel:+4407447437760" className="flex items-center text-gray-400 hover:text-white transition-colors">
+                <a href="tel:+44020712345675" className="flex items-center text-gray-400 hover:text-white transition-colors">
                   <Phone className="h-4 w-4 mr-3" />
-                  +44 07447437760
+                  (+44) 0 20 7123 4567
                 </a>
                 <a href="mailto:info@zybernetsolutions.com" className="flex items-center text-gray-400 hover:text-white transition-colors">
                   <Mail className="h-4 w-4 mr-3" />
