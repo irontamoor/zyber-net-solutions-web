@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, Facebook, Twitter, Linkedin, CheckCircle, Shield, Zap, Users } from "lucide-react";
@@ -94,8 +93,8 @@ const Index = () => {
                 <CardTitle className="text-gray-800">Call Us</CardTitle>
               </CardHeader>
               <CardContent>
-                <a href="tel:+1234567890" className="text-primary hover:text-primary/80 text-lg font-semibold">
-                  (123) 456-7890
+                <a href="tel:+4407447437760" className="text-primary hover:text-primary/80 text-lg font-semibold">
+                  +44 07447437760
                 </a>
                 <p className="text-gray-600 mt-2">Available 24/7</p>
               </CardContent>
@@ -160,9 +159,9 @@ const Index = () => {
             <div>
               <h3 className="text-lg font-semibold mb-4 text-white">Contact</h3>
               <div className="space-y-3">
-                <a href="tel:+1234567890" className="flex items-center text-gray-400 hover:text-white transition-colors">
+                <a href="tel:+4407447437760" className="flex items-center text-gray-400 hover:text-white transition-colors">
                   <Phone className="h-4 w-4 mr-3" />
-                  (123) 456-7890
+                  +44 07447437760
                 </a>
                 <a href="mailto:info@zybernetsolutions.com" className="flex items-center text-gray-400 hover:text-white transition-colors">
                   <Mail className="h-4 w-4 mr-3" />

@@ -1,10 +1,10 @@
 
 const StatsSection = () => {
   const stats = [
-    { number: "500+", label: "Satisfied Clients" },
+    { number: "24/7", label: "Expert Support" },
     { number: "99.9%", label: "Uptime Guarantee" },
     { number: "15+", label: "Years Experience" },
-    { number: "24/7", label: "Support Available" }
+    { number: "Local", label: "Trusted Provider" }
   ];
 
   return (

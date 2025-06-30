@@ -50,7 +50,7 @@ const Navigation = () => {
           <div className="flex items-center space-x-4">
             <Button className="hidden md:flex bg-primary hover:bg-primary/90 text-white shadow-lg">
               <Phone className="mr-2 h-4 w-4" />
-              <a href="tel:+1234567890">Call Now</a>
+              <a href="tel:+4407447437760">Call Now</a>
             </Button>
             
             {/* Mobile Menu Button */}
@@ -75,7 +75,7 @@ const Navigation = () => {
               <button onClick={() => scrollToSection('contact')} className="text-left hover:text-primary transition-colors font-medium">Contact</button>
               <Button className="bg-primary hover:bg-primary/90 text-white shadow-lg w-fit">
                 <Phone className="mr-2 h-4 w-4" />
-                <a href="tel:+1234567890">Call Now</a>
+                <a href="tel:+4407447437760">Call Now</a>
               </Button>
             </div>
           </div>
