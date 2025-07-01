@@ -48,9 +48,12 @@ const Navigation = () => {
           </div>
           
           <div className="flex items-center space-x-4">
-            <Button className="hidden md:flex bg-primary hover:bg-primary/90 text-white shadow-lg">
+            <Button 
+              className="hidden md:flex bg-primary hover:bg-primary/90 text-white shadow-lg"
+              onClick={() => scrollToSection('contact')}
+            >
               <Phone className="mr-2 h-4 w-4" />
-              <a href="tel:+44020712345675">Call Now</a>
+              Call Now
             </Button>
             
             {/* Mobile Menu Button */}
@@ -73,9 +76,12 @@ const Navigation = () => {
               <button onClick={() => scrollToSection('about')} className="text-left hover:text-primary transition-colors font-medium">About</button>
               <button onClick={() => scrollToSection('testimonials')} className="text-left hover:text-primary transition-colors font-medium">Testimonials</button>
               <button onClick={() => scrollToSection('contact')} className="text-left hover:text-primary transition-colors font-medium">Contact</button>
-              <Button className="bg-primary hover:bg-primary/90 text-white shadow-lg w-fit">
+              <Button 
+                className="bg-primary hover:bg-primary/90 text-white shadow-lg w-fit"
+                onClick={() => scrollToSection('contact')}
+              >
                 <Phone className="mr-2 h-4 w-4" />
-                <a href="tel:+44020712345675">Call Now</a>
+                Call Now
               </Button>
             </div>
           </div>

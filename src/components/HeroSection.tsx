@@ -61,9 +61,13 @@ const HeroSection = () => {
             Empowering businesses, enterprises, and homes with reliable technology support, cybersecurity, and infrastructure solutions
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="bg-white text-primary hover:bg-gray-100 text-lg px-8 py-4 shadow-xl border-2 border-white/20">
+            <Button 
+              size="lg" 
+              className="bg-white text-primary hover:bg-gray-100 text-lg px-8 py-4 shadow-xl border-2 border-white/20"
+              onClick={() => scrollToSection('contact')}
+            >
               <Phone className="mr-2 h-5 w-5" />
-              <a href="tel:+44020712345675">Get Started Today</a>
+              Get Started Today
             </Button>
             <Button 
               size="lg" 

@@ -37,6 +37,10 @@ const ConsultancySection = () => {
     }
   ];
 
+  const scrollToSection = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section id="consultancy" className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&h=1080&fit=crop')" }}></div>
@@ -47,7 +51,10 @@ const ConsultancySection = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Strategic IT consulting to drive your business forward. Our experts help you make informed technology decisions that deliver real business value.
           </p>
-          <Button className="bg-primary hover:bg-primary/90 text-white shadow-lg">
+          <Button 
+            className="bg-primary hover:bg-primary/90 text-white shadow-lg"
+            onClick={() => scrollToSection('contact')}
+          >
             Schedule a Consultation
           </Button>
         </div>
@@ -97,7 +104,10 @@ const ConsultancySection = () => {
               <div className="bg-gradient-to-br from-primary to-secondary rounded-lg p-6 text-white">
                 <h4 className="text-xl font-bold mb-2">Free Initial Consultation</h4>
                 <p className="mb-4">Get expert advice on your IT challenges</p>
-                <Button className="bg-white text-primary hover:bg-gray-100">
+                <Button 
+                  className="bg-white text-primary hover:bg-gray-100"
+                  onClick={() => scrollToSection('contact')}
+                >
                   Book Now
                 </Button>
               </div>
