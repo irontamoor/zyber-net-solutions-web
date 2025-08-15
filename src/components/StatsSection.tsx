@@ -1,7 +1,7 @@
 
 const StatsSection = () => {
   const stats = [
-    { number: "A Legacy of", label: "IT Excellence" },
+    { number: "Years of Trusted", label: "Technology Solutions" },
     { number: "24/7", label: "Nationwide Support" },
     { number: "99.9%", label: "Uptime Guarantee" },
     { number: "Enterprise", label: "Grade Solutions" }
