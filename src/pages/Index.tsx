@@ -26,7 +26,7 @@ const Index = () => {
             <div>
               <h2 className="text-4xl font-bold mb-6 text-gray-800">About ZyberNetSolutions</h2>
               <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-                With Over a Decade of Proven IT Expertise, ZyberNetSolutions has been the trusted technology partner for businesses, enterprises, and homeowners across the region.
+                With over a decade of proven IT expertise, ZyberNet Solutions has been the trusted technology partner for businesses, enterprises, and homeowners across the region.
               </p>
               <p className="text-gray-600 text-lg mb-8 leading-relaxed">
                 Whether you're a Fortune 500 company, a growing startup, or a family looking to upgrade your home network, our team of certified professionals provides comprehensive IT solutions that drive growth, enhance security, and ensure operational excellence.
