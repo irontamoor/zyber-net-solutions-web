@@ -90,7 +90,7 @@ const Testimonials = () => {
   const stats = [
     { number: "500+", label: "Satisfied Clients" },
     { number: "99.9%", label: "Uptime Guarantee" },
-    { number: "15+", label: "Years Experience" },
+    { number: "Expert IT Support", label: "Backed by Years of Success" },
     { number: "24/7", label: "Support Available" }
   ];
 
