@@ -84,7 +84,7 @@ const ConsultancySection = () => {
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start">
                   <span className="text-primary mr-2">•</span>
-                  15+ years of industry experience across various sectors
+                  Over a Decade of Proven IT Expertise across various sectors
                 </li>
                 <li className="flex items-start">
                   <span className="text-primary mr-2">•</span>
